@@ -1,0 +1,40 @@
+/* Ensure responsive design for smaller screens */
+#sendAMessage {
+    width: 100%; 
+    margin-bottom: 20px;
+    resize: none;
+    border: none;
+    background-color: rgb(247, 247, 247);
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  #donationsList {
+    width: 100%;
+  }
+  
+  #btnAddMore {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  #locationChoice {
+    margin-bottom: 10px;
+  }
+  
+  
+ 
+  #confirmationBox {
+    display: flex;
+    justify-content: center;
+  }
+  
+  @media (max-width: 600px) {
+    #sendAMessage {
+      width: 100%;
+      height: 150px;
+    }
+    .MuiFormControl-root {
+      width: 100%;
+    }
+  }
