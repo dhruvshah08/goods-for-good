@@ -24,7 +24,7 @@ producer = Producer(producer_conf)
 
 app = Flask(__name__)
 CORS(app)
-client = MongoClient('mongodb://localhost:28141/')
+client = MongoClient('mongodb://localhost:27141/')
 db = client['donation-system'] 
 
 
@@ -196,6 +196,43 @@ def send_email_notification(email, state, categories, campaign_id, num_items):
         print(f"Failed to send email to {email}: {e}")
         raise
 
+# Checking Query performance without Text Index on an unsharded Application
+@app.route('/search-title', methods=['GET'])
+def search_title():
+    start_time = time.time() 
+    query = request.args.get('query', '').strip()
+
+    if not query:
+        return jsonify({'error': 'Query string is required'}), 400
+
+    campaigns = db.campaigns.find({"title": {"$regex": query, "$options": "i"}})
+    campaign_list = []
+
+    for campaign in campaigns:
+        location = db.locations.find_one({"_id": campaign["location_id"]})
+
+        if not location:
+            return jsonify({'error': 'Location not found'}), 404
+        
+        campaign_data = {
+            "campaign_id": str(campaign["_id"]),
+            "title": campaign["title"],
+            "description": campaign["description"],
+            "cause": campaign["cause"],
+            "event_type": campaign["event_type"],
+            "event_date": campaign["event_date"],
+            "state": location["state"], 
+            "street_name": location["street_name"], 
+            "image_url": campaign["image_url"],
+            "donations": [str(donation_id) for donation_id in campaign.get("donations", [])],
+        }
+        campaign_list.append(campaign_data)
+        print(campaign_list)
+    end_time = time.time()  # End the timer
+    elapsed_time = end_time - start_time  # Calculate elapsed time
+    
+    print(f"Time taken: {elapsed_time:.2f} seconds")  # Log the elapsed time
+    return jsonify(campaign_list), 200
 
 @app.route('/campaigns/search', methods=['GET'])
 def search_campaigns():
