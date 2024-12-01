@@ -1,4 +1,20 @@
-# goods-for-good
+# Goods for Good
+This application would allow the users to
+donate goods to various campaigns posted throughout the United States. These campaigns
+can target various causes like earthquakes, storms, floods, etc. Users can donate goods like
+clothes, electronics, furniture and toys to campaigns of their choice by dropping it off at the
+nearest USPS store. With over 7500 campaigns hosted, the application needs to be efficient
+enough to help users donate to the causes of their preference. As our system does not place
+any restrictions on the location, being the user needs to only drop their goods off at the
+nearest USPS store, location-based filtering is not taken into consideration. A similar
+application - GoFundMe does a similar task where they collect money for a specific cause.
+Our solution to donate goods addresses this gap in the market to help unfortunate people by
+donating items. A MongoDB distributed Architecture is setup for this to provide scalability, replication and fault-tolerance.
+
+
+Steps to run the project:
+
+
 <ol>
 <li>Clone this repository</li>
 <li>Download kafka</li>
@@ -19,7 +35,8 @@
 <li>Run backend.py in /scripts</li>
 <li>Start Frontend - npm start</li>
 <li>Create S3 Buckets: dds-campaign-images, dds-donation-images</li>
-<li>Execute Data-Upload.ipynb to insert data and upload images in s3</li>
+<li>Execute Data-Upload.ipynb to insert data and upload images in s3
+WARNING: This procedure will take approximately 3-4 hours.</li>
 <li>Create MongoDB Sharded Architecture as: </li>
 <code>
 docker network create mongo-shard-cluster
