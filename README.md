@@ -1,6 +1,7 @@
 # goods-for-good
 <ol>
-<li>Download kafka (https://kafka.apache.org/downloads)</li>
+<li>Clone this repository</li>
+<li>Download kafka</li>
 <li>Navigate to the kafka folder</li>
 <li>Start All Mongo Docker Containers</li>
 <li>Start Zookeeper in the first terminal with the command - 
@@ -140,4 +141,9 @@ sh.moveChunk("donation-system.campaigns", { cause: "Wind and Storm" }, "shard-3-
 
 If facing error in secondary mongo shell: rs.secondaryOk()
 </code>
+<li>Pip install required packages for backend.py</li>
+<li>Download React.js</li>
+<li>Download Typescript</li>
+<li>Download MaterialUI</li>
+
 </ol>

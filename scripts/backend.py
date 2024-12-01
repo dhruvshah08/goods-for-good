@@ -10,6 +10,9 @@ from bson.objectid import ObjectId
 from flask_cors import CORS 
 import pandas as pd
 import time
+import smtplib
+from email.mime.text import MIMEText
+
 producer_conf = {
     'bootstrap.servers': 'localhost:9092',  
     'client.id': 'backend-producer'
@@ -21,14 +24,14 @@ producer = Producer(producer_conf)
 
 app = Flask(__name__)
 CORS(app)
-client = MongoClient('mongodb://localhost:27141/')
+client = MongoClient('mongodb://localhost:28141/')
 db = client['donation-system'] 
 
 
 s3_client = boto3.client(
     's3',
-    aws_access_key_id='<ENTER_AWS_KEY_ID>',
-    aws_secret_access_key='<ENTER_AWS_SECRET_ACCESS_KEY>',
+    aws_access_key_id='AKIAZKDIDBCUPUX2SDGC',
+    aws_secret_access_key='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',
     region_name='us-east-1'
 )
 bucket_name = 'dds-donation-images'
@@ -155,8 +158,7 @@ def send_email_notification(email, state, categories, campaign_id, num_items):
     {row["PHYSICAL DELV ADDR"].iloc[0]} 
     {row["PHYSICAL CITY"].iloc[0]}, {row["PHYSICAL STATE"].iloc[0]}, {row["PHYSICAL ZIP"].iloc[0]}"""
     # print(addr)
-    import smtplib
-    from email.mime.text import MIMEText
+    
 
     # Format email content
     subject = "Thank you for your donation!"
@@ -235,7 +237,7 @@ def search_campaigns():
 @app.route('/campaigns', methods=['GET'])
 def get_all_campaigns():
     start_time = time.time() 
-    campaigns = db.campaigns.find({})
+    campaigns = db.campaigns.find({}).limit(50)
     campaign_list = []
 
     for campaign in campaigns:
