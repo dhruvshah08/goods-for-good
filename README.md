@@ -20,17 +20,15 @@
 <li>Create S3 Buckets: dds-campaign-images, dds-donation-images</li>
 <li>Execute Data-Upload.ipynb to insert data and upload images in s3</li>
 <li>Create MongoDB Sharded Architecture as: </li>
-
+<code>
 docker network create mongo-shard-cluster
 
-###############################
 docker run -d --net mongo-shard-cluster --name config-svr-1 -p 27101:27017 mongo:4.4 mongod --port 27017 --configsvr --replSet config-svr-replica-set
 
 docker run -d --net mongo-shard-cluster --name config-svr-2 -p 27102:27017 mongo:4.4 mongod --port 27017 --configsvr --replSet config-svr-replica-set
 
 docker run -d --net mongo-shard-cluster --name config-svr-3 -p 27103:27017 mongo:4.4 mongod --port 27017 --configsvr --replSet config-svr-replica-set
 
-#################################
 
 docker exec -it config-svr-1 mongo
 
@@ -141,5 +139,5 @@ sh.moveChunk("donation-system.campaigns", { cause: "Wind and Storm" }, "shard-3-
 
 
 If facing error in secondary mongo shell: rs.secondaryOk()
-
+</code>
 </ol>
