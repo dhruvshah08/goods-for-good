@@ -21,7 +21,7 @@ producer = Producer(producer_conf)
 
 app = Flask(__name__)
 CORS(app)
-client = MongoClient('mongodb://localhost:28141/')
+client = MongoClient('mongodb://localhost:27141/')
 db = client['donation-system'] 
 
 
