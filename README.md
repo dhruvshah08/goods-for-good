@@ -12,31 +12,22 @@ Our solution to donate goods addresses this gap in the market to help unfortunat
 donating items. A MongoDB distributed Architecture is setup for this to provide scalability, replication and fault-tolerance.
 
 
-Steps to run the project:
+<b>Steps to run the project:</b>
 
 
 <ol>
 <li>Clone this repository</li>
-<li>Download kafka</li>
-<li>Navigate to the kafka folder</li>
-<li>Start All Mongo Docker Containers</li>
-<li>Start Zookeeper in the first terminal with the command - 
-.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</li>
-<li>Start Broker in the second terminal using the command -
-.\bin\windows\kafka-server-start.bat .\config\server.properties</li>
-<li>Open the project in VS Code</li>
-<li>Download the Dataset - https://drive.google.com/drive/folders/1jxRhq7F2NNqh2W3sLbr22ZwpGLqBCdCD?usp=sharing </li>
-<li>Move the folder to the /public</li>
-
-<li>The folder structure should look like: </li>
-<img src="./public/images/dataset-folder-structure.png">
+<li>Download & Install kafka</li>
+<li>Download & Install React.js</li>
+<li>Download & Install  Typescript</li>
+<li>Download & Install  MaterialUI</li>
 <li>Update AWS Keys in: /scripts/backend.py line 30,31 </li>
 <li>Update AWS Keys in: /scripts/Data-Upload.ipynb Cell 12  line 6,7</li>
-<li>Run backend.py in /scripts</li>
-<li>Start Frontend - npm start</li>
 <li>Create S3 Buckets: dds-campaign-images, dds-donation-images</li>
-<li>Execute Data-Upload.ipynb to insert data and upload images in s3
-WARNING: This procedure will take approximately 3-4 hours.</li>
+<li>Download the Dataset - https://drive.google.com/drive/folders/1jxRhq7F2NNqh2W3sLbr22ZwpGLqBCdCD?usp=sharing </li>
+<li>Move the folder to the /public</li>
+<li>The folder structure should look like: </li>
+<img src="./public/images/dataset-folder-structure.png">
 <li>Create MongoDB Sharded Architecture as: </li>
 <code>
 docker network create mongo-shard-cluster
@@ -158,9 +149,22 @@ sh.moveChunk("donation-system.campaigns", { cause: "Wind and Storm" }, "shard-3-
 
 If facing error in secondary mongo shell: rs.secondaryOk()
 </code>
-<li>Pip install required packages for backend.py</li>
-<li>Download React.js</li>
-<li>Download Typescript</li>
-<li>Download MaterialUI</li>
+<li>Start All Mongo Docker Containers</li>
+<li>Pip install required packages for backend.py and Data-Upload.ipynb</li>
+<li>Execute Data-Upload.ipynb to insert data and upload images in s3
+WARNING: This procedure will take approximately 3-4 hours.</li>
+
+<li>Navigate to the kafka folder</li>
+
+<li>Start Zookeeper in the first terminal with the command - 
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</li>
+<li>Start Broker in the second terminal using the command -
+.\bin\windows\kafka-server-start.bat .\config\server.properties</li>
+
+<li>Run backend.py in /scripts</li>
+<li>Start Frontend - npm start</li>
+
+
+
 
 </ol>
