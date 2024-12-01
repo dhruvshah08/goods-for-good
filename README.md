@@ -163,7 +163,7 @@ WARNING: This procedure will take approximately 3-4 hours.</li>
 
 <li>Run backend.py in /scripts</li>
 <li>Start Frontend - npm start</li>
-
+<img src="./public/images/login-page.png">
 
 
 
