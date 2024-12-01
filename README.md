@@ -17,7 +17,7 @@ donating items. A MongoDB distributed Architecture is setup for this to provide 
 
 <ol>
 <li>Clone this repository</li>
-<li>Download & Install kafka</li>
+<li>Download & Install Kafka</li>
 <li>Download & Install React.js</li>
 <li>Download & Install  Typescript</li>
 <li>Download & Install  MaterialUI</li>
@@ -151,20 +151,19 @@ If facing error in secondary mongo shell: rs.secondaryOk()
 </code>
 <li>Start All Mongo Docker Containers</li>
 <li>Pip install required packages for backend.py and Data-Upload.ipynb</li>
-<li>Execute Data-Upload.ipynb to insert data and upload images in s3
+<li>Execute Data-Upload.ipynb to insert data and upload images in s3<br>
 WARNING: This procedure will take approximately 3-4 hours.</li>
 
 <li>Navigate to the kafka folder</li>
 
-<li>Start Zookeeper in the first terminal with the command - 
+<li>Start Zookeeper in the first terminal with the command - <br>
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</li>
-<li>Start Broker in the second terminal using the command -
+<li>Start Broker in the second terminal using the command -<br>
 .\bin\windows\kafka-server-start.bat .\config\server.properties</li>
 
 <li>Run backend.py in /scripts</li>
 <li>Start Frontend - npm start</li>
 <img src="./public/images/login-page.png">
-
-
-
+<li>Use one of the emails for logging in - 'rgyawal1@asu.edu','hpant5@asu.edu','dshah113@asu.edu','dzaveri1@asu.edu'
+<br>You can keep the password field empty</li>
 </ol>
