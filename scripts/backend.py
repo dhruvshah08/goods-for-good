@@ -274,7 +274,7 @@ def search_campaigns():
 @app.route('/campaigns', methods=['GET'])
 def get_all_campaigns():
     start_time = time.time() 
-    campaigns = db.campaigns.find({}).limit(50)
+    campaigns = db.campaigns.find({}).limit(500)
     campaign_list = []
 
     for campaign in campaigns:
