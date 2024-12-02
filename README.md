@@ -152,7 +152,7 @@ If facing error in secondary mongo shell: rs.secondaryOk()
 <li>Start All Mongo Docker Containers</li>
 <li>Pip install required packages for backend.py and Data-Upload.ipynb</li>
 <li>Execute Data-Upload.ipynb to insert data and upload images in s3<br>
-WARNING: This procedure will take approximately 3-4 hours.</li>
+<b>WARNING: This procedure will take approximately 3-4 hours.</li></b>
 
 <li>Navigate to the kafka folder</li>
 
@@ -164,8 +164,9 @@ WARNING: This procedure will take approximately 3-4 hours.</li>
 <li>Navigate to scripts folder as - <code>cd scripts</code></li>
 <li><code>python backend.py</code></li>
 <li>Install required packages - <code>npm install</code></li>
+<li>Open a new terminal</li>
 <li>Start Frontend -  <code>npm start</code></li>
 <img src="./public/images/login-page.png">
-<li>Use one of the emails for logging in - 'rgyawal1@asu.edu','hpant5@asu.edu','dshah113@asu.edu','dzaveri1@asu.edu'
+<li>Use your email address to login
 <br>You can keep the password field empty</li>
 </ol>
