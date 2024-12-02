@@ -21,8 +21,8 @@ donating items. A MongoDB distributed Architecture is setup for this to provide 
 <li>Download & Install React.js</li>
 <li>Download & Install  Typescript</li>
 <li>Download & Install  MaterialUI</li>
-<li>Update AWS Keys in: /scripts/backend.py line 30,31 </li>
-<li>Update AWS Keys in: /scripts/Data-Upload.ipynb Cell 12  line 6,7</li>
+<li>Update AWS Keys in: <code> /scripts/backend.py line 30,31</code> </li>
+<li>Update AWS Keys in: <code> /scripts/Data-Upload.ipynb Cell 12  line 6,7</code></li>
 <li>Create S3 Buckets: dds-campaign-images, dds-donation-images</li>
 <li>Download the Dataset - https://drive.google.com/drive/folders/1jxRhq7F2NNqh2W3sLbr22ZwpGLqBCdCD?usp=sharing </li>
 <li>Move the folder to the /public</li>
@@ -157,12 +157,14 @@ WARNING: This procedure will take approximately 3-4 hours.</li>
 <li>Navigate to the kafka folder</li>
 
 <li>Start Zookeeper in the first terminal with the command - <br>
-.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</li>
+<code>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties</code></li>
 <li>Start Broker in the second terminal using the command -<br>
-.\bin\windows\kafka-server-start.bat .\config\server.properties</li>
+<code>.\bin\windows\kafka-server-start.bat .\config\server.properties</code></li>
 
-<li>Run backend.py in /scripts</li>
-<li>Start Frontend - npm start</li>
+<li>Navigate to scripts folder as - <code>cd scripts</code></li>
+<li><code>python backend.py</code></li>
+<li>Install required packages - <code>npm install</code></li>
+<li>Start Frontend -  <code>npm start</code></li>
 <img src="./public/images/login-page.png">
 <li>Use one of the emails for logging in - 'rgyawal1@asu.edu','hpant5@asu.edu','dshah113@asu.edu','dzaveri1@asu.edu'
 <br>You can keep the password field empty</li>
