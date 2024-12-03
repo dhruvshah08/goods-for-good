@@ -30,8 +30,8 @@ db = client['donation-system']
 
 s3_client = boto3.client(
     's3',
-    aws_access_key_id='AKIAZKDIDBCUPUX2SDGC',
-    aws_secret_access_key='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',
+    aws_access_key_id='<ENTER_AWS_ACCESS_KEY_ID>',
+    aws_secret_access_key='<ENTER_AWS_SECRET_ACCESS_KEY>',
     region_name='us-east-1'
 )
 bucket_name = 'dds-donation-images'
@@ -274,7 +274,7 @@ def search_campaigns():
 @app.route('/campaigns', methods=['GET'])
 def get_all_campaigns():
     start_time = time.time() 
-    campaigns = db.campaigns.find({}).limit(500)
+    campaigns = db.campaigns.find({}).limit(50)
     campaign_list = []
 
     for campaign in campaigns:

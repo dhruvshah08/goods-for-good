@@ -21,7 +21,7 @@ donating items. A MongoDB distributed Architecture is setup for this to provide 
 <li>Download & Install React.js</li>
 <li>Download & Install  Typescript</li>
 <li>Download & Install  MaterialUI</li>
-<li>Update AWS Keys in: <code> /scripts/backend.py line 30,31</code> </li>
+<li>Update AWS Keys in: <code> /scripts/backend.py line 33,34</code> </li>
 <li>Update AWS Keys in: <code> /scripts/Data-Upload.ipynb Cell 12  line 6,7</code></li>
 <li>Create S3 Buckets: dds-campaign-images, dds-donation-images</li>
 <li>Download the Dataset - https://drive.google.com/drive/folders/1jxRhq7F2NNqh2W3sLbr22ZwpGLqBCdCD?usp=sharing </li>
